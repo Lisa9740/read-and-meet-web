@@ -4,6 +4,7 @@ import 'package:provider/single_child_widget.dart';
 import '../providers/api/auth.provider.dart';
 import '../providers/api/book.provider.dart';
 import '../providers/api/post.provider.dart';
+import '../providers/api/product.provider.dart';
 import '../providers/api/user.provider.dart';
 
 
@@ -26,6 +27,12 @@ class ProvidersService {
       ChangeNotifierProxyProvider<AuthApiProvider, BookApiProvider>(
         create: (ctx) => BookApiProvider(),
         update: (ct, auth, prevState) => BookApiProvider(
+          authToken: auth.token,
+        ),
+      ),
+      ChangeNotifierProxyProvider<AuthApiProvider, ProductApiProvider>(
+        create: (ctx) => ProductApiProvider(),
+        update: (ct, auth, prevState) => ProductApiProvider(
           authToken: auth.token,
         ),
       ),

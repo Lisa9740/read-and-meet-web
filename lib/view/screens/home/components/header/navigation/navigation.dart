@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../../../../core/utils/layout/screen.layout.dart';
+import '../../../../../../../core/utils/layout/screen.layout.dart';
 import '../../../../auth/login.screen.dart';
+
+
 
 
 class Navigation extends StatelessWidget {
@@ -21,6 +23,14 @@ class Navigation extends StatelessWidget {
   loginAndRegisterButton(context){
     return Row(
       children: [
+        SizedBox(height: 30,
+            width: ScreenLayout
+                .getContainerWidth(context)
+                .containerWidth * 0.50 / 3,
+            child: TextButton(onPressed: () {
+
+            },
+                child: const Text('Mon panier'))),
         SizedBox(height: 30,
             width: ScreenLayout
                 .getContainerWidth(context)
@@ -59,20 +69,22 @@ class Navigation extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(width: 20,),
+              const SizedBox(width: 30,),
               SizedBox(
                 height: 50,
                 width: ScreenLayout.getContainerWidth(context).containerWidth * 0.50,
                 child: Row(
                     children: [
-                      Image.asset(
-                        "lib/assets/images/logo/book_logo.png",
-                        color: Colors.black,
-                      ),
-                      Image.asset(
-                        "lib/assets/images/logo/letter_logo.png",
-                        color: Colors.black,
-                      ),
+                   ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                      child:  Image.asset(
+                      "lib/assets/images/logo/book_logo_icon.png",
+                    )),
+                      const SizedBox(width: 10,),
+                    Image.asset(
+                      "lib/assets/images/logo/letter_logo.png",
+                      color: Colors.black,
+                    ),
                     ]
                 ),
 

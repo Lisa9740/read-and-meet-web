@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:read_and_meet_web/core/services/provider.service.dart';
 import 'package:read_and_meet_web/view/screens/auth/login.screen.dart';
-import 'package:read_and_meet_web/view/screens/home.screen.dart';
+import 'package:read_and_meet_web/view/screens/home/home.screen.dart';
 
 import 'core/providers/api/auth.provider.dart';
 import 'core/theme/app.theme.dart';

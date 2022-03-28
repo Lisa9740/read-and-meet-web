@@ -1,21 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:read_and_meet_web/view/widgets/buttons/rounded.corner.button.dart';
 
-import '../../../../../core/theme/app.theme.dart';
-import '../../../../../core/utils/layout/screen.layout.dart';
+import '../../../../../../core/utils/layout/screen.layout.dart';
+
 import 'navigation/navigation.dart';
 
 Widget TopContent(_key, context){
-
-
-  var buttonWidth = ScreenLayout.getScreenWidth(context) / 2;
-
-  if (!ScreenLayout
-      .getContainerWidth(context)
-      .isSmallDevice) {buttonWidth = ScreenLayout.getScreenWidth(context) / 3;}
-
-
   return Column(
     children: [
       Wrap(children: [
@@ -46,26 +38,17 @@ Widget TopContent(_key, context){
         ],),
       ),const SizedBox(height: 5),
       const SizedBox(height: 5),
-      Padding(padding: const EdgeInsets.all(20), child: Container(
+      Padding(padding: const EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 0), child: Container(
         width:  ScreenLayout.getContainerWidth(context).containerWidth * 0.60 - 5,
         child : RichText(
           text: TextSpan(text:
-          'Vous aimer lire ? Vous voulez rencontrez des gens et discuter de vos lectures?\n'
-              'Cela tombe bien notre appli ReadAndMeet est là pour vous !\n  \n',
+          'Vous aimer lire ? Vous voulez achetez un livre ? ReadAndMeet est fait pour vous !\n  \n',
             style: GoogleFonts.gudea(fontSize: 25, color: Colors.black ),
           ),
           textAlign: TextAlign.center,
         ),)),
-      const SizedBox(width: 35, height: 10,),
-      Container(color: AppTheme.mainColor,
-        width: buttonWidth,
-        child: const Padding(padding: EdgeInsets.all(20),
-            child: Text(
-              "Télécharger l'application ici !", textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)),
-      ),
-      const SizedBox(height: 50,),
-
+      RoundedCornerButton(onTap: null, child: Text("Voir notre catalogue d\'ebook", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),), width: ScreenLayout.getContainerWidth(context).containerWidth * 0.60 - 5,),
+      const SizedBox(height: 50),
     ],
   );
 }

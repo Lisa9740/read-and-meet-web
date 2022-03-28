@@ -1,17 +1,20 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart' as map;
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../screens/posts/post.details.screen.dart';
+import '../../../../posts/post.details.screen.dart';
+
+
 
 class GoogleMapView extends StatefulWidget {
   GoogleMapView({Key? key, this.posts, this.postView}) : super(key: key);
   final posts;
   Widget? postView;
 
-  GoogleMapController? mapController;
+  map.GoogleMapController? mapController;
 
   @override
   _GoogleMapViewState createState() => _GoogleMapViewState();
@@ -72,7 +75,7 @@ class _GoogleMapViewState extends State<GoogleMapView> {
           ),
           markers: postPositions,
           minMaxZoomPreference: const MinMaxZoomPreference(10,17),
-          onMapCreated: (GoogleMapController controller){
+          onMapCreated: (map.GoogleMapController controller){
             widget.mapController = controller;
           }),
     );

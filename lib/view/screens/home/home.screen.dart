@@ -2,13 +2,12 @@ import 'dart:core';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:read_and_meet_web/view/screens/home/unauthenticated-home/unauthenticated.home.screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../core/utils/layout/screen.layout.dart';
-import 'auth/login.screen.dart';
-import 'home/authenticated-home/authenticated.home.screen.dart';
-import 'home/unauthenticated-home/unauthenticated.home.screen.dart';
-
+import '../../../core/utils/layout/screen.layout.dart';
+import '../auth/login.screen.dart';
+import 'authenticated-home/authenticated.home.screen.dart';
 
 
 class HomeScreen extends StatefulWidget {

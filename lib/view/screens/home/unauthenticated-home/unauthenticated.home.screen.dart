@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:read_and_meet_web/view/widgets/products/products.dart';
 
 import '../../../../core/theme/app.theme.dart';
 import '../../../../core/utils/layout/screen.layout.dart';
 
-import '../../../widgets/datas/render.posts.data.dart';
-import 'components/home.bloc.map.dart';
-import 'components/top.content.dart';
 
+import '../../../widgets/datas/render.posts.data.dart';
+import '../components/content/post-discover/post.discover.bloc.dart';
+import '../components/header/top.content.dart';
 
 
 UnauthenticatedHomeScreen(_key, context){
@@ -16,50 +17,40 @@ UnauthenticatedHomeScreen(_key, context){
   mapView(posts, position){
     return Container(color: Colors.black,
         width: screenWidth,
-        child: MapBlock(screenWidth, posts, context)
+        child: DiscoverPostOnMapBlock(screenWidth, posts, context)
     );
   }
 
+
   return SingleChildScrollView(
       child: Column(
-          children: [
+          children: <Widget>[
             Container(
               width: screenWidth,
               color: Colors.grey[100],
               child: TopContent(_key, context),
             ),
-            RenderPostsData(view: mapView),
             Container(color: Colors.orange,
                 width: screenWidth, height: 10,
                 child: Text('')
             ),
-            Container(color: Colors.grey[200],
-              width: screenWidth, height: ScreenLayout.getScreenHeigth(context) * 0.20,
-              child: Padding(padding: EdgeInsets.all(20),
-                  child:Column(
-                    children:  [
-                      const Text("Ajouter une annonce ?",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 28,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold),),
-                      const Text(
-                        "Vous avez des livres à mettre à disposition  gratuitement ou"
-                            " à vendre ? \n Inscrivez-vous ou connectez-vous afin de gérer vos annonce",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.black, fontSize: 20),),
-                      Container(color: AppTheme.mainColor,
-                          width: ScreenLayout.getScreenWidth(context) / 3 ,
-                          child: const SizedBox(height: 50, child:
-                          Text("Inscrivez-vous !", textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),)
-                      ),
-                    ],
-                  )
-              ),
+            RenderPostsData(view: mapView),
+            Container(color: AppTheme.mainColor,
+                width: screenWidth, height: 10,
+                child: Text('')
             ),
-            Container(color: Colors.black,
+            Container(width: screenWidth,
+                color: Colors.grey[100],
+                child: Padding(padding: EdgeInsets.all(30), child:
+                Text('Notre Catalogue', style: Theme.of(context).textTheme.headline1, textAlign: TextAlign.start,))
+            ),
+            Container(height: 300, child:
+            const Products()),
+            Container(color: Colors.orange,
+                width: screenWidth, height: 10,
+                child: Text('')
+            ),
+            Container(color:AppTheme.secondColor,
                 width: screenWidth, height: ScreenLayout.getScreenHeigth(context) * 0.20,
                 child: Text('Footer')
             )

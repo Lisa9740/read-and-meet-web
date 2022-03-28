@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 import '../../../../core/providers/api/user.provider.dart';
 import '../../../../core/storage/shared.pref.dart';
 import '../../../../core/utils/layout/screen.layout.dart';
-import '../../../widgets/datas/render.posts.data.dart';
 
-import '../unauthenticated-home/components/home.bloc.map.dart';
+
+import '../../../widgets/datas/render.posts.data.dart';
+import '../components/content/post-discover/post.discover.bloc.dart';
+
 
 class AuthenticatedHomeScreen extends StatefulWidget {
   const AuthenticatedHomeScreen ({Key? key}) : super(key: key);
@@ -24,7 +26,7 @@ class _AuthenticatedHomeScreenState extends State<AuthenticatedHomeScreen> {
     return Container(color: Colors.black,
         width: MediaQuery.of(context).size.width ,
 
-        child: MapBlock(MediaQuery.of(context).size.width, posts, context)
+        child: DiscoverPostOnMapBlock(MediaQuery.of(context).size.width, posts, context)
     );
   }
 
