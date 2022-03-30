@@ -5,13 +5,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart' as map;
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import '../../../../../../core/utils/layout/breakpoints.dart';
 import '../../../../posts/post.details.screen.dart';
 
 
 
 class GoogleMapView extends StatefulWidget {
-  GoogleMapView({Key? key, this.posts, this.postView}) : super(key: key);
+  GoogleMapView({Key? key, this.posts, this.postView, this.mapHeight }) : super(key: key);
   final posts;
+  final mapHeight;
   Widget? postView;
 
   map.GoogleMapController? mapController;
@@ -65,7 +67,7 @@ class _GoogleMapViewState extends State<GoogleMapView> {
 
     return  Container(
       alignment: Alignment.centerLeft,
-      height: 500,
+      height:  screenWidth > Breakpoints.tablet ? 550 : 500,
       child: GoogleMap(
           scrollGesturesEnabled : false,
           mapType:  MapType.normal,

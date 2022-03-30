@@ -5,8 +5,7 @@ import 'package:provider/provider.dart';
 import '../../../core/providers/api/product.provider.dart';
 
 class RenderProductsData extends StatelessWidget {
-  const RenderProductsData({Key? key, required this.view, this.data}) : super(key: key);
-  final data;
+  const RenderProductsData({Key? key, required this.view}) : super(key: key);
   final view;
 
   @override
@@ -15,7 +14,7 @@ class RenderProductsData extends StatelessWidget {
         future: Provider.of<ProductApiProvider>(context, listen: false).fetchProducts(),
         builder: (ct, productSnapshot) {
           if (productSnapshot.connectionState == ConnectionState.waiting) {
-            return view([],  data);
+            return view([]);
           }
 
           if (productSnapshot.hasError) {

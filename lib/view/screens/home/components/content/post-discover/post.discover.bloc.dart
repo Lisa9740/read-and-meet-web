@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../../core/utils/layout/breakpoints.dart';
 
+import '../../../../../../core/utils/layout/screen.layout.dart';
 import '../../../../posts/post.details.screen.dart';
 import 'post.map.text.dart';
 import 'google.map.view.dart';
@@ -11,7 +12,7 @@ import 'google.map.view.dart';
 
 
 Widget DiscoverPostOnMapBlock(screenWidth, posts, context){
-  return screenWidth <= Breakpoints.tablet ? blockSmallScreen(posts, context) : blockWideScreen(posts, context);
+  return screenWidth <= Breakpoints.tablet ? blockSmallScreen(posts, screenWidth,  context) : blockWideScreen(posts, context);
 }
 
 
@@ -22,10 +23,11 @@ onMapMarkerTap(post, context){
 }
 
 
-blockSmallScreen(posts, context){
+blockSmallScreen(posts, screenWidth, context){
   return Wrap(children: [
     Padding(padding: EdgeInsets.only(top: 30, bottom: 30, left: 20, right: 20),
         child: Container(
+
             child: DiscoverPostOnMapTextContent(context)
         )),
     Container(
@@ -39,9 +41,10 @@ blockWideScreen(posts, context){
   return Row(children: [
     Expanded(
         flex: 1,
-        child: Padding(padding: EdgeInsets.only(top: 30, bottom: 30, left: 20, right: 10),
-          child : Container(
-              child: DiscoverPostOnMapTextContent(context)
+        child:  Container(
+
+              child: Padding(padding: EdgeInsets.only(top: 30, bottom: 30, left: 20, right: 10),
+                  child :DiscoverPostOnMapTextContent(context)
           ),)),
     Expanded(
         flex: 3,

@@ -25,10 +25,10 @@ class _RoundedCornerButtonState extends State<RoundedCornerButton> {
       color: AppTheme.appTheme().colorScheme.primary,
       borderRadius: BorderRadius.circular(50),
       child: InkWell(
-        hoverColor: Color(0xff5A4554),
-        splashColor: Color(0xff5A4554),
-        focusColor: Color(0xfff67f29),
-        highlightColor:  Color(0xfff67f29),
+        hoverColor: Color(0xfff67f29),
+        splashColor: Color(0xfff67f29),
+        focusColor: Color(0xff5A4554),
+        highlightColor:  Color(0xff5A4554),
         onTap: () {
           WidgetsBinding.instance?.addPostFrameCallback((_) {
             widget.onTap();

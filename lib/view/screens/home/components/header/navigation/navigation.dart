@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:read_and_meet_web/core/theme/app.theme.dart';
 import '../../../../../../../core/utils/layout/screen.layout.dart';
 import '../../../../auth/login.screen.dart';
 
@@ -22,31 +25,46 @@ class Navigation extends StatelessWidget {
 
   loginAndRegisterButton(context){
     return Row(
-      children: [
-        SizedBox(height: 30,
+        children: [
+          SizedBox(
+              width: ScreenLayout
+                  .getContainerWidth(context)
+                  .containerWidth * 0.50 / 3,
+              child: InkWell(
+                child: Wrap(
+                    children: [
+                      const Icon(
+                        Icons.shopping_cart,
+                        size: 24.0,
+                      ),
+                      SizedBox(width: 5),
+                      Text('Mon panier',
+                          style: GoogleFonts.raleway(fontWeight: FontWeight.bold)),
+                    ]),
+              )),
+          SizedBox(
+              width: ScreenLayout
+                  .getContainerWidth(context)
+                  .containerWidth * 0.50 / 3,
+              child: InkWell(
+                  onTap: (){Navigator.pushNamed(context, LoginScreen.routeName);},
+                  child: Wrap(
+                      children: [
+                        const Icon(
+                          Icons.login,
+                          size: 24.0,
+                        ), SizedBox(width: 5),
+                        Text('Se connecter', style: GoogleFonts.raleway(fontWeight: FontWeight.bold),),
+                      ]))),
+          SizedBox(
             width: ScreenLayout
                 .getContainerWidth(context)
                 .containerWidth * 0.50 / 3,
-            child: TextButton(onPressed: () {
-
-            },
-                child: const Text('Mon panier'))),
-        SizedBox(height: 30,
-            width: ScreenLayout
-                .getContainerWidth(context)
-                .containerWidth * 0.50 / 3,
-            child: TextButton(onPressed: () {
-              Navigator.pushNamed(context, LoginScreen.routeName);
-            },
-                child: const Text('Se connecter'))),
-        SizedBox(
-            height: 30,
-            width: ScreenLayout
-                .getContainerWidth(context)
-                .containerWidth * 0.50 / 3,
-            child: TextButton(onPressed: () {},
-                child: const Text('S\'inscrire'))),
-      ],
+            child:InkWell(
+                onTap: (){Navigator.pushNamed(context, LoginScreen.routeName);},
+                child: Wrap(
+                    children: [ Text('S\'inscrire', style: GoogleFonts.raleway(fontWeight: FontWeight.bold, color: AppTheme.mainColor)),])
+          ))]
     );
   }
 
@@ -75,16 +93,16 @@ class Navigation extends StatelessWidget {
                 width: ScreenLayout.getContainerWidth(context).containerWidth * 0.50,
                 child: Row(
                     children: [
-                   ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                      child:  Image.asset(
-                      "lib/assets/images/logo/book_logo_icon.png",
-                    )),
+                      ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child:  Image.asset(
+                            "lib/assets/images/logo/book_logo_icon.png",
+                          )),
                       const SizedBox(width: 10,),
-                    Image.asset(
-                      "lib/assets/images/logo/letter_logo.png",
-                      color: Colors.black,
-                    ),
+                      !ScreenLayout.getContainerWidth(context).isSmallDevice ? Image.asset(
+                        "lib/assets/images/logo/letter_logo.png",
+                        color: Colors.black,
+                      ) : Container(),
                     ]
                 ),
 
@@ -96,6 +114,7 @@ class Navigation extends StatelessWidget {
     );
   }
 }
+
 Widget setAppBar(GlobalKey<ScaffoldState> globalKey) {
   return AppBar(
     actions: <Widget>[

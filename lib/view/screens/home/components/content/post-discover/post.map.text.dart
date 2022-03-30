@@ -12,7 +12,7 @@ Widget DiscoverPostOnMapTextContent(context){
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         const Padding(
-            padding: EdgeInsets.all(20),child: Text("Découvrez les annonces dès maintenant !",
+            padding: EdgeInsets.all(20),child: Text("Des livres d'occasions à vendre ?",
             style: TextStyle(fontSize: 28, color: Colors.white, fontWeight: FontWeight.bold),  textAlign: TextAlign.start)),
         SizedBox(height: 10),
         Padding(
@@ -23,7 +23,7 @@ Widget DiscoverPostOnMapTextContent(context){
               style: GoogleFonts.gudea(color: Colors.white, fontSize: 18, ), textAlign: TextAlign.start ,)),
         SizedBox(height: 30),
         Container(color: Colors.orange,
-          width: buttonWidth,
+          width: !ScreenLayout.getContainerWidth(context).isSmallDevice ? buttonWidth : ScreenLayout.getScreenWidth(context) / 2,
           child: const Padding(padding: EdgeInsets.all(20),
               child: Text(
                 "Télécharger l'application ici !", textAlign: TextAlign.center,

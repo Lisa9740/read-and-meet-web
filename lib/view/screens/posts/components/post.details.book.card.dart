@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:read_and_meet_web/core/theme/app.theme.dart';
 
 import '../../../../core/routes/arguments/book.screen.arguments.dart';
 import '../../../../core/theme/constants.dart';
@@ -45,7 +46,7 @@ class PostDetailsBookCard extends StatelessWidget {
                         BoxShadow(
                           offset: Offset(0, 10),
                           blurRadius: 33,
-                          color: kShadowColor,
+                          color: AppTheme.mainColor,
                         ),
                       ],
                     ),
