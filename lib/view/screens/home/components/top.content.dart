@@ -4,9 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:read_and_meet_web/core/theme/app.theme.dart';
 import 'package:read_and_meet_web/view/widgets/buttons/rounded.corner.button.dart';
 
-import '../../../../../../core/utils/layout/screen.layout.dart';
+import '../../../../../core/utils/layout/screen.layout.dart';
 
-import 'navigation/navigation.dart';
+import '../../../widgets/header/navigation/navigation.dart';
 
 Widget TopContent(_key, context){
   return Column(
@@ -42,12 +42,12 @@ Widget TopContent(_key, context){
         width:  ScreenLayout.getContainerWidth(context).containerWidth * 0.60 - 5,
         child : RichText(
           text: TextSpan(text:
-          'Vous aimer lire ? Vous voulez achetez un livre ? ReadAndMeet est fait pour vous !\n  \n',
+          'Vous aimer lire ? Vous voulez parler d\'un livre ? ReadAndMeet est fait pour vous !\n  \n',
             style: GoogleFonts.spaceMono(fontSize: 25, color: Colors.black ),
           ),
           textAlign: TextAlign.center,
         ),)),
-      RoundedCornerButton(onTap: null, child: Text("Voir notre catalogue d\'ebook", style: GoogleFonts.raleway(color: Colors.white, fontWeight: FontWeight.bold),), width: ScreenLayout.getContainerWidth(context).containerWidth * 0.60 - 5,),
+      RoundedCornerButton(onTap: null, child: Text("Lire nos articles", style: GoogleFonts.raleway(color: Colors.white, fontWeight: FontWeight.bold),), width: ScreenLayout.getContainerWidth(context).containerWidth * 0.60 - 5,),
       const SizedBox(height: 80),
     ],
   );

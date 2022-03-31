@@ -8,7 +8,7 @@ import '../../../../core/utils/layout/screen.layout.dart';
 
 import '../../../widgets/datas/render.posts.data.dart';
 import '../components/content/post-discover/post.discover.bloc.dart';
-import '../components/header/top.content.dart';
+import '../components/top.content.dart';
 
 
 UnauthenticatedHomeScreen(_key, context){
