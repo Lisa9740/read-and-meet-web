@@ -14,7 +14,7 @@ class Logo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 50,
+        height: 80,
         child: OverflowBox(
           minWidth: ValueKey(minWidth).value ?? 0.0,
           maxWidth: ValueKey(maxWidth).value ?? 210.0,
@@ -22,11 +22,11 @@ class Logo extends StatelessWidget {
           maxHeight:ValueKey(maxHeight).value ??  280.0,
           child:
           SizedBox(
-            height: 150,
-            child: SvgPicture.asset(
-              "lib/common/assets/images/logo/logo.svg",
-              color: color,
-            ),
+            height: 80,
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),child: Image.asset(
+              "lib/assets/images/logo/book_logo_icon.png",
+            )),
           ),
         )
     );

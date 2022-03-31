@@ -6,7 +6,7 @@ import 'package:read_and_meet_web/view/screens/home/unauthenticated-home/unauthe
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/utils/layout/screen.layout.dart';
-import '../auth/login.screen.dart';
+import '../auth/login/login.screen.dart';
 import 'authenticated-home/authenticated.home.screen.dart';
 
 
