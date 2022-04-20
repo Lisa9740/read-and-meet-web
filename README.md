@@ -1,2 +1,2 @@
 # read-and-meet-web
-Site e-commerce qui fait partie du projet ReadAndMeet
+Site web qui fait partie du projet ReadAndMeet
