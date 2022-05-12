@@ -43,7 +43,7 @@ class AppTheme {
         ),
         headlineLarge: GoogleFonts.raleway(
           fontSize: 30,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w800,
           color: Colors.black,
         ),
         bodyText1:  const TextStyle(

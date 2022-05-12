@@ -1,11 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:read_and_meet_web/core/theme/app.theme.dart';
-import 'package:read_and_meet_web/view/screens/auth/register/register.screen.dart';
 import '../../../../../../../core/utils/layout/screen.layout.dart';
-import '../../../screens/auth/login/login.screen.dart';
+
 
 class Navigation extends StatefulWidget {
   Navigation({Key? key, required this.globalKey}) : super(key: key);
@@ -26,7 +23,7 @@ class _NavigationState extends State<Navigation>{
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 80,
+        height: 100,
         child :
         Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -34,7 +31,7 @@ class _NavigationState extends State<Navigation>{
             children: [
               const SizedBox(width: 30,),
               SizedBox(
-                height: 50,
+                height: 80,
                 width: ScreenLayout.getContainerWidth(context).containerWidth * 0.5,
                 child: Row(
                     children: [
