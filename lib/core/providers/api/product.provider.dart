@@ -15,7 +15,7 @@ class ProductApiProvider with ChangeNotifier{
   var products = [];
 
   Future<List<Product>> fetchProducts() async{
-    String url = "${ApiConf.baseUrl}/products";
+    String url = "${ApiConf.baseUrl}/books";
     try {
       var headers = await ApiConf.getHeaders(authToken);
       var response = await http.get(Uri.parse(url), headers: headers);

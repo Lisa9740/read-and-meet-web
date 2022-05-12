@@ -5,14 +5,15 @@ import 'package:provider/provider.dart';
 
 import '../../../core/providers/api/book.provider.dart';
 
-class RenderBooksData extends StatelessWidget {
-  const RenderBooksData({Key? key, required Function this.view}) : super(key: key);
+class RenderBooksDataByPostId extends StatelessWidget {
+  const RenderBooksDataByPostId({Key? key, required this.id, required Function this.view}) : super(key: key);
+  final id;
   final view;
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: Provider.of<BookApiProvider>(context, listen: false).getAll(),
+        future: Provider.of<BookApiProvider>(context, listen: false).getByPostId(id),
         builder: (ct, dataSnapshot) {
           var position = dataSnapshot.data;
           if (dataSnapshot.connectionState == ConnectionState.waiting) {

@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 
 import '../../../core/providers/api/post.provider.dart';
 
-class RenderPostsData extends StatelessWidget {
-  const RenderPostsData({Key? key, required this.view, this.data}) : super(key: key);
+class RenderPostsViewWithData extends StatelessWidget {
+  const RenderPostsViewWithData({Key? key, required this.view, this.data}) : super(key: key);
   final data;
   final view;
 

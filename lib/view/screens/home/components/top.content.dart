@@ -9,20 +9,16 @@ import '../../../../../core/utils/layout/screen.layout.dart';
 import '../../../widgets/header/navigation/navigation.dart';
 
 Widget TopContent(_key, context){
-  return Column(
+  final screenWidth = ScreenLayout.getScreenWidth(context);
+
+  return Container(
+      width: screenWidth,
+      color: Colors.grey[100],
+      child :Column(
     children: [
       Wrap(children: [
         Navigation(globalKey: _key)
       ],),
-      const SizedBox(height: 10),
-      Container(
-        width: 200,
-          child: Image.asset(
-            "lib/assets/images/logo/book_logo.png",
-            color: Colors.black,
-            alignment: Alignment.center,
-          )
-      ),
       const SizedBox(height: 20),
       SizedBox(
         width:  ScreenLayout.getContainerWidth(context).containerWidth * 0.60 - 5,
@@ -47,8 +43,6 @@ Widget TopContent(_key, context){
           ),
           textAlign: TextAlign.center,
         ),)),
-      RoundedCornerButton(onTap: null, child: Text("Lire nos articles", style: GoogleFonts.raleway(color: Colors.white, fontWeight: FontWeight.bold),), width: ScreenLayout.getContainerWidth(context).containerWidth * 0.60 - 5,),
-      const SizedBox(height: 80),
     ],
-  );
+  ));
 }

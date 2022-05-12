@@ -24,6 +24,18 @@ class BookApiProvider with ChangeNotifier{
     }
   }
 
+  getAll() async{
+    String url = "${ApiConf.baseUrl}/books";
+    var headers = await ApiConf.getHeaders(authToken);
+    try {
+      var response = await http.get(Uri.parse(url), headers: headers);
+      return parseResponse(response);
+    } catch (e) {
+      print(e);
+      return List<Book>.empty();
+    }
+  }
+
   getSuggestions(String pattern) async {
     var result;
     if (pattern != '') {

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:read_and_meet_web/core/theme/app.theme.dart';
 
@@ -7,11 +8,11 @@ import '../../../widgets/buttons/two.side.rounded.btn.dart';
 import '../../../widgets/render.image.dart';
 
 
-class PostDetailsBookCard extends StatelessWidget {
+class BookCard extends StatelessWidget {
   final book;
   final image;
 
-  const PostDetailsBookCard({
+  const BookCard({
     Key? key,
     this.image,
     required this.book,
@@ -29,7 +30,7 @@ class PostDetailsBookCard extends StatelessWidget {
         children: <Widget>[
           Container(
             margin: const EdgeInsets.only(left: 24, bottom: 40),
-            height: 245,
+            height: 285,
             width: 202,
             child: Stack(
               children: <Widget>[
@@ -38,7 +39,7 @@ class PostDetailsBookCard extends StatelessWidget {
                   left: 0,
                   right: 0,
                   child: Container(
-                    height: 221,
+                    height: 226,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(29),
@@ -46,7 +47,7 @@ class PostDetailsBookCard extends StatelessWidget {
                         BoxShadow(
                           offset: Offset(0, 10),
                           blurRadius: 33,
-                          color: AppTheme.mainColor,
+                          color: kShadowColor,
                         ),
                       ],
                     ),
@@ -72,7 +73,7 @@ class PostDetailsBookCard extends StatelessWidget {
                 Positioned(
                   top: 160,
                   child: Container(
-                    height: 85,
+                    height: 100,
                     width: 202,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,7 +81,8 @@ class PostDetailsBookCard extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(left: 24),
                           child: RichText(
-                            maxLines: 2,
+                            overflow: TextOverflow.clip,
+                            maxLines: 3,
                             text: TextSpan(
                               style: const TextStyle(color: kBlackColor),
                               children: [

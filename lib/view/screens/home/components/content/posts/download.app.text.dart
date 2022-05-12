@@ -4,11 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../../../../core/utils/layout/screen.layout.dart';
 
-Widget DiscoverPostOnMapTextContent(context){
+Widget downloadAppText(context){
 
-  final screenWidth = ScreenLayout.getScreenWidth(context);
   var buttonWidth = ScreenLayout.getScreenWidth(context) / 5;
-  return Column(
+  return  Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         const Padding(

@@ -1,8 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../../../core/routes/arguments/post.screen.arguments.dart';
 import '../../../core/theme/constants.dart';
@@ -10,9 +7,9 @@ import '../../../core/utils/layout/screen.layout.dart';
 import '../../widgets/avatar.dart';
 import '../../widgets/buttons/rounded.corner.button.dart';
 import '../../widgets/datas/render.book.cover.data.dart';
-import '../../widgets/datas/render.books.data.dart';
+import '../../widgets/datas/render.books.data.by.post.dart';
 import '../../widgets/datas/render.user.data.by.id.dart';
-import 'components/post.details.book.card.dart';
+import 'components/book.card.dart';
 
 
 class PostDetailsScreen extends StatefulWidget {
@@ -36,10 +33,7 @@ class _PostDetailsScreenState extends State<PostDetailsScreen> {
       post = widget.currentPost;
     }
 
-    createConversation() async {
-    //  return await CreateConversationFromPostAction(post).createConversation(context, post);
-    }
-
+   
     returnPostAuthorName(user){
       return Text(user.name.toString(), style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),);
     }
@@ -104,7 +98,7 @@ class _PostDetailsScreenState extends State<PostDetailsScreen> {
                   ),
                   Column(
                     children: [
-                      RenderBooksData(id: post.postId, view: bookView),
+                      RenderBooksDataByPostId(id: post.postId, view: bookView),
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: Container(
@@ -112,7 +106,7 @@ class _PostDetailsScreenState extends State<PostDetailsScreen> {
                           child: Center(
                               child: RoundedCornerButton(
                                 width: double.parse("300"),
-                                onTap: createConversation,
+                                onTap: null,
                                 child: const Text('Contacter', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),)
                           ),
                           decoration: const BoxDecoration(
@@ -154,17 +148,16 @@ class _PostDetailsScreenState extends State<PostDetailsScreen> {
 
   bookView(books){
     return Container(
-        height: 320,
+        height: 300,
         child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: books.length,
             itemBuilder: (context, index) {
               coverView(cover){
-                print("test $cover");
                 if (cover != List.empty()) {
-                  return PostDetailsBookCard(book: books[index], image: cover,);
+                  return BookCard(book: books[index], image: cover,);
                 }else{
-                  return PostDetailsBookCard(book: books[index]);
+                  return BookCard(book: books[index]);
                 }
               }
               return RenderBookCoverPath(uri: books[index].cover, view: coverView);

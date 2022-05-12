@@ -6,30 +6,27 @@ import '../../../../../../../core/utils/layout/breakpoints.dart';
 
 import '../../../../../../core/utils/layout/screen.layout.dart';
 import '../../../../posts/post.details.screen.dart';
-import 'post.map.text.dart';
+import 'download.app.text.dart';
 import 'google.map.view.dart';
 
 
 
-Widget DiscoverPostOnMapBlock(screenWidth, posts, context){
+Widget Posts(screenWidth, posts, context){
   return screenWidth <= Breakpoints.tablet ? blockSmallScreen(posts, screenWidth,  context) : blockWideScreen(posts, context);
 }
 
 
-
 onMapMarkerTap(post, context){
-  print(post.toString());
   PostDetailsScreen(currentPost: post,);
 }
 
 
 blockSmallScreen(posts, screenWidth, context){
-  return Wrap(children: [
-    Padding(padding: EdgeInsets.only(top: 30, bottom: 30, left: 20, right: 20),
-        child: Container(
-
-            child: DiscoverPostOnMapTextContent(context)
-        )),
+  return Column(children: [
+    Padding(
+        padding: EdgeInsets.only(top: 30, bottom: 30, left: 20, right: 20),
+        child: downloadAppText(context)
+    ),
     Container(
       child:GoogleMapView(posts: posts),
     )
@@ -42,9 +39,9 @@ blockWideScreen(posts, context){
     Expanded(
         flex: 1,
         child:  Container(
-
-              child: Padding(padding: EdgeInsets.only(top: 30, bottom: 30, left: 20, right: 10),
-                  child :DiscoverPostOnMapTextContent(context)
+          child: Padding(
+              padding: EdgeInsets.only(top: 30, bottom: 30, left: 20, right: 10),
+              child : downloadAppText(context)
           ),)),
     Expanded(
         flex: 3,
