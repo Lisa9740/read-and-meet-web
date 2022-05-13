@@ -64913,7 +64913,7 @@ A.KO.prototype={}
 A.fC.prototype={
 nt(a){var s=0,r=A.O(t.z),q,p=2,o,n=[],m=this,l,k,j,i,h,g,f
 var $async$nt=A.P(function(b,c){if(b===1){o=c
-s=p}while(true)switch(s){case 0:h="http://127.0.0.1:8000/api/book/post/"+A.d(a)
+s=p}while(true)switch(s){case 0:h="https://rad-backend.barret-alison-dev.xyz/api/book/post/"+A.d(a)
 s=3
 return A.T(A.mo(m.a),$async$nt)
 case 3:g=c
@@ -64947,7 +64947,7 @@ case 2:return A.L(o,r)}})
 return A.N($async$nt,r)},
 eU(a){var s=0,r=A.O(t.z),q,p=2,o,n=[],m=this,l,k,j,i,h,g,f
 var $async$eU=A.P(function(b,c){if(b===1){o=c
-s=p}while(true)switch(s){case 0:h="http://127.0.0.1:8000/api/books"
+s=p}while(true)switch(s){case 0:h="https://rad-backend.barret-alison-dev.xyz/api/books"
 s=3
 return A.T(A.mo(m.a),$async$eU)
 case 3:g=c
@@ -64983,7 +64983,7 @@ while(true)switch(s){case 0:s=3
 return A.T(A.mo(p.a),$async$nr)
 case 3:n=c
 s=4
-return A.T(A.R3(A.fn("http://127.0.0.1:8000/api/post/image/"+A.d(B.b.gA(a.split("/"))),0,null),n),$async$nr)
+return A.T(A.R3(A.fn("https://rad-backend.barret-alison-dev.xyz/api/post/image/"+A.d(B.b.gA(a.split("/"))),0,null),n),$async$nr)
 case 4:m=c
 l=m.e
 k=A.BX(A.BO(l).c.a.h(0,"charset"))
@@ -64991,7 +64991,7 @@ j=m.x
 A.dE("bookImage "+k.bX(0,j))
 o=B.O.zP(0,A.BX(A.BO(l).c.a.h(0,"charset")).bX(0,j),null)
 l=J.am(o)
-q="http://127.0.0.1:8000/storage/photos/"+A.d(!J.f(l.gl(o),0)?B.b.gA(J.alz(J.ao(l.h(o,0),"path"),"/")):null)
+q="https://rad-backend.barret-alison-dev.xyz/storage/photos/"+A.d(!J.f(l.gl(o),0)?B.b.gA(J.alz(J.ao(l.h(o,0),"path"),"/")):null)
 s=1
 break
 case 1:return A.M(q,r)}})
@@ -65008,7 +65008,7 @@ A.KR.prototype={}
 A.hC.prototype={
 pj(){var s=0,r=A.O(t.vC),q,p=2,o,n=[],m=this,l,k,j,i,h,g,f
 var $async$pj=A.P(function(a,b){if(a===1){o=b
-s=p}while(true)switch(s){case 0:g="http://127.0.0.1:8000/api/posts"
+s=p}while(true)switch(s){case 0:g="https://rad-backend.barret-alison-dev.xyz/api/posts"
 p=4
 s=7
 return A.T(A.mo(m.a),$async$pj)
@@ -65055,7 +65055,7 @@ s=7
 return A.T(A.mo(m.a),$async$ns)
 case 7:l=c
 s=8
-return A.T(A.R3(A.fn("http://127.0.0.1:8000/api/user/"+A.d(a),0,null),l),$async$ns)
+return A.T(A.R3(A.fn("https://rad-backend.barret-alison-dev.xyz/api/user/"+A.d(a),0,null),l),$async$ns)
 case 8:k=c
 if(k.b===200){i=k
 j=B.O.zP(0,A.BX(A.BO(i.e).c.a.h(0,"charset")).bX(0,i.x),null)

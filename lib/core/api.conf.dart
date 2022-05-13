@@ -6,8 +6,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiConf {
 
-  static String mainBaseUrl ="http://127.0.0.1:8000";
-  static String baseUrl ="http://127.0.0.1:8000/api";
+  static String mainBaseUrl ="https://rad-backend.barret-alison-dev.xyz";
+  static String baseUrl ="https://rad-backend.barret-alison-dev.xyz/api";
 
 /*
  static String baseUrl = "http://rad-backend.barret-alison-dev.xyz/api";
