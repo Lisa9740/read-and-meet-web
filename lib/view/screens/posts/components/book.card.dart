@@ -63,6 +63,7 @@ class BookCard extends StatelessWidget {
                           future: _calculation, // a previously-obtained Future<String> or null
                           builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
                             if (snapshot.hasData) {
+
                               return renderImage(book, image);
                             }
                             return CircularProgressIndicator(color: Colors.orange);
