@@ -11,6 +11,14 @@ Widget renderImage(book, image){
       httpsLink,
       alignment: Alignment.center,
       width: 80,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        // Required for CORS support to work
+        "Access-Control-Allow-Credentials": 'true',
+        // Required for cookies, authorization headers with HTTPS,
+        "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+            "Access-Control-Allow-Methods": "POST, OPTIONS, GET"
+      },
     );
   }else if (book.cover == ""){
     return Container(
