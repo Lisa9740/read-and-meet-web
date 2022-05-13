@@ -41,7 +41,11 @@ class BookApiProvider with ChangeNotifier{
     if (pattern != '') {
       result = await http.get(Uri.parse('https://www.googleapis.com/books/v1/volumes?q=' +
           Uri.encodeFull(pattern) +
-          '&key=AIzaSyBOqgUQhwLpEcOHLJJz48yHq6AO22rYHg0'));
+          '&key=AIzaSyBOqgUQhwLpEcOHLJJz48yHq6AO22rYHg0', ) ,  headers: {
+        "Access-Control-Allow-Origin": "*", // Required for CORS support to work
+        "Access-Control-Allow-Credentials": 'true', // Required for cookies, authorization headers with HTTPS,
+        "Access-Control-Allow-Methods": "POST, OPTIONS, GET"
+      });
       if (result.statusCode == successCode) {
         Map<String, dynamic> json = jsonDecode(result.body);
         List finish = [];
