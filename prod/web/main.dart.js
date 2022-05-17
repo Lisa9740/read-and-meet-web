@@ -61823,7 +61823,7 @@ A.DN.prototype={
 M(a,b){return A.asj(new A.tx(new A.Z9(),null,null,t.gg),A.atb())}}
 A.Z9.prototype={
 $3(a,b,c){var s=A.aet()
-return new A.mz(A.E(["/",new A.Z8()],t.N,t.Ab),"/","Flutter Demo",s,null)},
+return new A.mz(A.E(["/",new A.Z8()],t.N,t.Ab),"/","Read And Meet",s,null)},
 $C:"$3",
 $R:3,
 $S:404}

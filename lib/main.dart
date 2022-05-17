@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       child: Consumer<AuthApiProvider>(
           builder: (ctx, authData, child) {
             return MaterialApp(
-              title: 'Flutter Demo',
+              title: 'Read And Meet',
               theme: AppTheme.appTheme(),
               initialRoute: '/',
               routes: {
