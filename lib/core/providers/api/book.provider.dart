@@ -92,6 +92,9 @@ class BookApiProvider with ChangeNotifier{
           .last;
     }
     var urlImage = "${ApiConf.mainBaseUrl}/storage/photos/$path";
+
+
+    print(urlImage);
     return urlImage;
   }
 

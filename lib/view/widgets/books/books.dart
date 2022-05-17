@@ -7,11 +7,12 @@ class Books extends StatelessWidget {
   const Books({Key? key}) : super(key: key);
 
   Widget build(BuildContext context) {
-    view(books){
+
+    view(List books){
       return ListView.builder(
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
-          itemCount: books.length,
+          itemCount: 6,
           itemBuilder: (context, index) {
             coverView(cover){
               if (cover != List.empty()) {

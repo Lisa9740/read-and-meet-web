@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import '../../../core/routes/arguments/post.screen.arguments.dart';
 import '../../../core/theme/constants.dart';
 import '../../../core/utils/layout/screen.layout.dart';
-import '../../widgets/avatar.dart';
 import '../../widgets/buttons/rounded.corner.button.dart';
 import '../../widgets/datas/render.book.cover.data.dart';
 import '../../widgets/datas/render.books.data.by.post.dart';
 import '../../widgets/datas/render.user.data.by.id.dart';
 import 'components/book.card.dart';
 
+import 'dart:html' as html;
 
 class PostDetailsScreen extends StatefulWidget {
   const PostDetailsScreen({Key? key, this.currentPost}) : super(key: key);
@@ -33,6 +33,13 @@ class _PostDetailsScreenState extends State<PostDetailsScreen> {
       post = widget.currentPost;
     }
 
+    void downloadFile() {
+      String url = 'https://rad-backend.barret-alison-dev.xyz/storage/read-and-meet.apk';
+
+      html.AnchorElement anchorElement =  new html.AnchorElement(href: url);
+      anchorElement.download = url;
+      anchorElement.click();
+    }
    
     returnPostAuthorName(user){
       return Text(user.name.toString(), style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),);
@@ -43,6 +50,8 @@ class _PostDetailsScreenState extends State<PostDetailsScreen> {
     var size = MediaQuery.of(context).size;
     var height = size.height;
     final PageController controller = PageController();
+
+
 
     return Scaffold(
         body: Stack(
@@ -58,15 +67,6 @@ class _PostDetailsScreenState extends State<PostDetailsScreen> {
                       child: Column(
                         children: [
                           const SizedBox(height: 30,),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Avatar(picture: post.authorAvatar, width: 80, height: 80)
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
                           RenderUserByIdData(id: post.userId, view: returnPostAuthorName),
                           const SizedBox(
                             height: 15,
@@ -106,8 +106,9 @@ class _PostDetailsScreenState extends State<PostDetailsScreen> {
                           child: Center(
                               child: RoundedCornerButton(
                                 width: double.parse("300"),
-                                onTap: null,
-                                child: const Text('Contacter', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),)
+                                onTap: downloadFile,
+                                child: const Text('Télécharger l\'application',
+                                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),)
                           ),
                           decoration: const BoxDecoration(
                             color: kBlackColor,
